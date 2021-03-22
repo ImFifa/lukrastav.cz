@@ -1,0 +1,14 @@
+{block content}
+    <header>
+        <h2 n:block="title">{$service}</h2>
+    </header>
+    <main>
+        <img src="{$basePath}/dist/img/{$slug}.jpg?853423" class="img-fluid" alt="{$service}">
+        <div class="service-content">
+            <div class="service-text">
+                {box $slug}
+            </div>
+            <a n:href="Homepage:#service" class="btn btn-primary">Zpět na úvodní stránku</a>
+        </div>
+    </main>
+{/block content}

@@ -19,7 +19,12 @@ class RouterFactory
 
 		$router->withModule('Front')
 			->addRoute('[<lang=cs (cs)>/]<presenter>/<action>', 'Homepage:default');
-
+		$router->withModule('Front')->addRoute('[<lang=cs [a-z]{2}>/]novinky', 'News:default');
+		$router->withModule('Front')->addRoute('[<lang=cs [a-z]{2}>/]novinka/<slug>', 'News:show');
+		$router->withModule('Front')->addRoute('[<lang=cs [a-z]{2}>/]sluzby', 'Service:default');
+		$router->withModule('Front')->addRoute('[<lang=cs [a-z]{2}>/]sluzba/<slug>', 'Service:show');
+		$router->withModule('Front')->addRoute('[<lang=cs [a-z]{2}>/]galerie', 'Gallery:default');
+		$router->withModule('Front')->addRoute('[<lang=cs [a-z]{2}>/]galerie/<id>', 'Gallery:show');
 		return $router;
 	}
 
