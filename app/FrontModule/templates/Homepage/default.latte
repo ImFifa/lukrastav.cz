@@ -10,7 +10,7 @@
                 </div>
                 <img src="{$basePath}/dist/img/header-house.jpg" class="lazyload img-fluid" alt="Lukrastav - dům">
             </div>
-            <div>
+            <div class="header-img">
                 <img src="{$basePath}/dist/img/header-construction.jpg" class="lazyload img-fluid" alt="Lukrastav - lešení">
             </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="container">
             <h2>Aktuality</h2>
 
-            <!--<a href="#" class="archive">Archiv aktualit</a>-->
+            <a n:href="News:default" class="archive">Archiv aktualit</a>
 
             <div class="row">
                 {foreach $news as $new}
@@ -129,16 +129,19 @@
     <section class="gallery" id="gallery">
         <div class="container">
             <h2>Galerie</h2>
-			{if ($galleries)}
-            <div class="row">
-                {foreach $images as $image}
-                    <a href="{$basePath}/upload/galleries/1/{$image->name}" class="col-md-6 col-xl-4 col-xml-2" data-lightbox="gallery" data-title="{$image->title}">
-                        <img src="{$basePath}/upload/galleries/1/thumbs/{$image->name}" class="lazyload img-fluid" alt="{$image->title}">
-                    </a>
-                {/foreach}
-            </div>
+			{if (!empty($galleries))}
+				<div class="row">
+					{foreach $galleries as $gallery}
+						<div class="col-md-6 col-xl-4">
+							<a n:href="Gallery:show $gallery->galleryId">
+								<img src="{$basePath}/upload/galleries/{$gallery->galleryId}/thumbs/{$gallery->imageName}" alt="{$gallery->galleryName}">
+								<h3>{$gallery->galleryName}</h3>
+							</a>
+						</div>
+					{/foreach}
+				</div>
 			{else}
-				<h4>Na webu zatím nebyla zveřejněna žádná galerie.</h4>
+				<h3>Zatím nebyla zveřejněna žádna galerie.</h3>
 			{/if}
 
         </div>

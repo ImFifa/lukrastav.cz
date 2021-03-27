@@ -7,7 +7,7 @@
 		{if (!empty($galleries))}
 			<div class="row">
 				{foreach $galleries as $gallery}
-					<div class="col-md-4 col-xl-3">
+					<div class="col-md-6 col-xl-4">
 						<a n:href="Gallery:show $gallery->galleryId">
 							<img src="{$basePath}/upload/galleries/{$gallery->galleryId}/thumbs/{$gallery->imageName}" alt="{$gallery->galleryName}">
 							<h3>{$gallery->galleryName}</h3>

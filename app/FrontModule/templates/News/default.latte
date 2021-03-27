@@ -1,0 +1,23 @@
+{block #content}
+<header>
+	<h2 n:block="title">Aktuality</h2>
+</header>
+<section class="news" id="news">
+	<div class="container">
+		<div class="row">
+			{foreach $news as $new}
+				<div class="col-md-6">
+					<a n:href="News:show $new->slug">
+						<div class="message {if $iterator->first}first{/if}">
+							<h3>{$new->title}</h3>
+							<i class="date">{$new->created|date:'d. m. Y'}</i>
+							<p>{$new->content|noescape}</p>
+						</div>
+					</a>
+				</div>
+			{/foreach}
+		</div>
+
+	</div>
+</section>
+{/block}
