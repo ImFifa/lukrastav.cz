@@ -1,21 +1,16 @@
 {
-	"name": "k2d/project-skeleton",
-	"description": "Project template",
+	"name": "urban-webdesign/lukrastav.cz",
+	"description": "lukrastav.cz",
+	"type": "project",
+	"license": "MIT",
 	"minimum-stability": "dev",
 	"prefer-stable": true,
 	"repositories": [
-		{
-			"type": "git",
-			"url": "git@github.com:K2D-CZ/core.git"
-		},
-		{
-			"type": "git",
-			"url": "git@github.com:K2D-CZ/box.git"
-		},
-		{
-			"type": "git",
-			"url": "git@github.com:K2D-CZ/file.git"
-		}
+		{ "type": "git", "url": "git@github.com:K2D-CZ/core.git" },
+		{ "type": "git", "url": "git@github.com:K2D-CZ/box.git" },
+		{ "type": "git", "url": "git@github.com:K2D-CZ/news.git" },
+		{ "type": "git", "url": "git@github.com:K2D-CZ/gallery.git" },
+		{ "type": "git", "url": "git@github.com:K2D-CZ/analytics.git" }
 	],
 	"require": {
 		"php": ">= 7.4",
@@ -26,9 +21,11 @@
 		"ext-xmlwriter": "*",
 		"nette/nette": "^3.0.0",
 		"orisai/nette-di": "^1.0.0",
-		"simple-cms/box-module": "v2.x-dev",
-		"simple-cms/core-module": "v2.x-dev",
-		"simple-cms/file-module": "v2.x-dev",
+		"simple-cms/box-module": "v2.0.0",
+		"simple-cms/core-module": "v2.0.0",
+		"simple-cms/news-module": "v2.0.0",
+		"simple-cms/gallery-module": "v2.0.0",
+		"simple-cms/analytics-module": "v2.0.0",
 		"symfony/dotenv": "^5.1",
 		"tracy/tracy": "^2.7.6"
 	},

@@ -1,0 +1,13 @@
+{block content}
+    <header>
+        <h2 n:block="title">{$new->title}</h2>
+
+        <i class="date">{$new->created|date:'d. m. Y'}</i>
+    </header>
+    <article>
+        <div class="message">
+            <p>{$new->content|noescape}</p>
+            <a n:href="Homepage:" class="btn btn-primary">Zpět na úvodní stránku</a>
+        </div>
+    </article>
+{/block content}

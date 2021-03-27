@@ -2,16 +2,16 @@
 
 namespace App\FrontModule\Presenters;
 
-use K2D\Box\Component\BoxComponent\BoxComponent;
-use K2D\Box\Component\BoxComponent\BoxComponentFactory;
-use K2D\Core\Presenter\FrontBasePresenter;
+use App\Components\BoxComponent;
+use App\Components\IBoxComponentFactory;
+use App\CoreModule\Presenters\FrontBasePresenter;
 use stdClass;
 
 abstract class BasePresenter extends FrontBasePresenter
 {
 
 	/** @inject */
-	public BoxComponentFactory $boxFactory;
+	public IBoxComponentFactory $boxFactory;
 
 	public function flashMessage($message, string $type = 'success'): stdClass
 	{

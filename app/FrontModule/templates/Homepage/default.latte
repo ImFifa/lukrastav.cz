@@ -1,3 +1,169 @@
 {block #content}
+    <section class="header" id="header">
+        <div class="container header-grid">
+            <div>
+                <h1>Lukrastav</h1>
+                {box welcome}
+                <div class="call-to-action">
+                    <a href="#service" class="scroll btn-prim">Naše služby</a>
+                    <a href="#contact" class="scroll btn-defa">Kontaktujte nás</a>
+                </div>
+                <img src="{$basePath}/dist/img/header-house.jpg" class="lazyload img-fluid" alt="Lukrastav - dům">
+            </div>
+            <div>
+                <img src="{$basePath}/dist/img/header-construction.jpg" class="lazyload img-fluid" alt="Lukrastav - lešení">
+            </div>
+        </div>
+    </section>
+    <section class="news" id="news">
+        <div class="container">
+            <h2>Aktuality</h2>
 
+            <!--<a href="#" class="archive">Archiv aktualit</a>-->
+
+            <div class="row">
+                {foreach $news as $new}
+                    <div class="col-md-6">
+                        <a n:href="News:show $new->slug">
+                            <div class="message {if $iterator->first}first{/if}">
+                                <h3>{$new->title}</h3>
+                                <i class="date">{$new->created|date:'d. m. Y'}</i>
+                                <p>{$new->content|noescape}</p>
+                            </div>
+                        </a>
+                    </div>
+                {/foreach}
+            </div>
+
+        </div>
+    </section>
+    <section class="service" id="service">
+        <div class="container">
+            <h2>Naše služby</h2>
+
+            <div class="row">
+				<div class="col-md-6 col-lg-4">
+					<a n:href="Service:show lesenarske-sluzby">
+						<img src="{$basePath}/dist/img/service01.jpg" class="lazyload img-fluid" alt="Lešenářské služby">
+						<h3>Lešenářské služby</h3>
+					</a>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<a n:href="Service:show stavebni-prace">
+						<img src="{$basePath}/dist/img/service02.jpg" class="lazyload img-fluid" alt="Stavební práce">
+						<h3>Stavební práce</h3>
+					</a>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<a n:href="Service:show zemni-prace">
+						<img src="{$basePath}/dist/img/service03.jpg" class="lazyload img-fluid" alt="Zemní práce">
+						<h3>Zemní práce</h3>
+					</a>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<a n:href="Service:show pokladka-kanalizace">
+						<img src="{$basePath}/dist/img/service04.jpg" class="lazyload img-fluid" alt="Pokládka kanalizace">
+						<h3>Pokládka kanalizace</h3>
+					</a>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<a n:href="Service:show elektroinstalace">
+						<img src="{$basePath}/dist/img/service05.jpg" class="lazyload img-fluid" alt="Elektroinstalace">
+						<h3>Elektroinstalace</h3>
+					</a>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<a n:href="Service:show autodoprava">
+						<img src="{$basePath}/dist/img/service06.jpg" class="lazyload img-fluid" alt="Autodoprava">
+						<h3>Autodoprava</h3>
+					</a>
+				</div>
+            </div>
+
+        </div>
+    </section>
+    <section class="reference" id="reference">
+        <div class="container">
+            <h2>Reference</h2>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <img src="{$basePath}/dist/img/metrostav.png" class="lazyload" alt="Metrostav">
+                    <div class="reference-text">
+                        {box reference_5}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="{$basePath}/dist/img/gemaart.jpeg" height="64px" class="lazyload" alt="GemaArt">
+                    <div class="reference-text">
+                        {box reference_4}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="{$basePath}/dist/img/metrostav.png" class="lazyload" alt="Metrostav">
+                    <div class="reference-text">
+                        {box reference_3}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="{$basePath}/dist/img/borrybuild.png" class="lazyload" alt="BorryBuild">
+                    <div class="reference-text">
+                        {box reference_2}
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <img src="{$basePath}/dist/img/metrostav.png" class="lazyload" alt="Metrostav">
+                    <div class="reference-text">
+                        {box reference_1}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container">
+            <h2>O nás</h2>
+            {box onas}
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Galerie</h2>
+			{if ($galleries)}
+            <div class="row">
+                {foreach $images as $image}
+                    <a href="{$basePath}/upload/galleries/1/{$image->name}" class="col-md-6 col-xl-4 col-xml-2" data-lightbox="gallery" data-title="{$image->title}">
+                        <img src="{$basePath}/upload/galleries/1/thumbs/{$image->name}" class="lazyload img-fluid" alt="{$image->title}">
+                    </a>
+                {/foreach}
+            </div>
+			{else}
+				<h4>Na webu zatím nebyla zveřejněna žádná galerie.</h4>
+			{/if}
+
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+
+            <div class="contact-info">
+                <div>
+                    {box contact_1}
+                </div>
+                <div>
+                    {box contact_2}
+                </div>
+                <div>
+                    {box contact_3}
+                </div>
+                <div>
+                    {box contact_4}
+                </div>
+                <div>
+                    {box contact_5}
+                </div>
+            </div>
+        </div>
+    </section>
 {/block}

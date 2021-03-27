@@ -25,6 +25,9 @@ const ROOT_PATH = __dirname;
 const CACHE_PATH = ROOT_PATH + "/temp/webpack";
 
 module.exports = {
+	watchOptions: {
+		poll: 500, // Check for changes every second
+	},
 	mode: devMode ? "development" : "production",
 	context: path.join(ROOT_PATH, "app/assets"),
 	entry: {
