@@ -5,7 +5,10 @@ import "bootstrap/js/dist/collapse";
 import "bootstrap/js/dist/collapse";
 import "bootstrap/js/dist/tab";
 
-// import "@/front/cookie";
+
+
+import "lightbox2/dist/css/lightbox.css";
+import lightbox from "lightbox2/dist/js/lightbox";
 
 import Nette from "@/front/netteForms";
 Nette.initOnLoad();
